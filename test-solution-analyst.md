@@ -1,17 +1,17 @@
-# High Level Design Architecture Diagram (Mobile Loan App - PT XYZ)
+# System Architecture Diagram
 
 ```mermaid
 flowchart TD
-    A[Mobile Frontend<br/>(Android / iOS App)]
-    B[API Gateway]
-    C[Backend API<br/>(Node.js / Spring / .NET)]
-    D[Third-party Integrations<br/>(Email, SMS, KTP, Payment)]
-    E1[Auth Svc]
-    E2[Loan Mgmt]
-    E3[User Profile]
-    E4[Notify Svc]
-    E5[Validation Engine<br/>(Loan Eligibility)]
-    F[Database<br/>(MySQL)]
+    A["Mobile Frontend\n(Android / iOS App)"]
+    B["API Gateway"]
+    C["Backend API\n(Node.js / Spring / .NET)"]
+    D["Third-party Integrations\n(Email, SMS, KTP, Payment)"]
+    E1["Auth Svc"]
+    E2["Loan Mgmt"]
+    E3["User Profile"]
+    E4["Notify Svc"]
+    E5["Validation Engine\n(Loan Eligibility)"]
+    F["Database\n(MySQL)"]
 
     A --> B
     B --> C
@@ -24,7 +24,7 @@ flowchart TD
     C --> E5
 
     E1 --> F
-```
+
 # Key Components
 - **Frontend (Mobile App)**:
 Dibuat dengan Flutter/React Native.

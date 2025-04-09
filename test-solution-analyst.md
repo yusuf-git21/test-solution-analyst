@@ -187,7 +187,7 @@ flowchart TD
 ## Response
 ```json
 { "status": "pending", "loan_id": 101 }
-
+```
 ## Loan Status
 ## Endpoint `GET /api/loans/:user_id`
 ```

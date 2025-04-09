@@ -172,7 +172,7 @@ flowchart TD
 ```
 ## Login API
 ## Endpoint `POST /api/login`
-```
+
 ## Loan Request
 ## Endpoint `/api/loans`
 ## Request

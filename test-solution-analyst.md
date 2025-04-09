@@ -261,8 +261,7 @@ Content-Type: application/json
 ## Method: POST
 ## Endpoint: `POST /api/notifications/send`
 `POST /api/notifications/send`
-
-##Headers:
+## Headers:
 ```http
 Authorization: Bearer <token>
 Content-Type: application/json

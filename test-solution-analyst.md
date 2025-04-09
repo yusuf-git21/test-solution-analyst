@@ -118,37 +118,38 @@ flowchart TD
     U --> N[Notifications]
 
     %% User Fields
-    U --> U1[id - PK]
-    U --> U2[name]
-    U --> U3[email]
-    U --> U4[phone]
-    U --> U5[password_hash]
-    U --> U6[ktp_photo]
-    U --> U7[selfie_photo]
-    U --> U8[created_at]
+    U --> U1["id - PK"]
+    U --> U2["name"]
+    U --> U3["email"]
+    U --> U4["phone"]
+    U --> U5["password_hash"]
+    U --> U6["ktp_photo"]
+    U --> U7["selfie_photo"]
+    U --> U8["created_at"]
 
     %% Loan Fields
-    L --> L1[id - PK]
-    L --> L2[user_id - FK]
-    L --> L3[amount]
-    L --> L4[tenor]
-    L --> L5[status: pending/accepted/rejected]
-    L --> L6[created_at]
-    L --> L7[approved_at]
+    L --> L1["id - PK"]
+    L --> L2["user_id - FK"]
+    L --> L3["amount"]
+    L --> L4["tenor"]
+    L --> L5["status: pending / accepted / rejected"]
+    L --> L6["created_at"]
+    L --> L7["approved_at"]
 
     %% Repayment Fields
-    R --> R1[id - PK]
-    R --> R2[loan_id - FK]
-    R --> R3[due_date]
-    R --> R4[amount_due]
-    R --> R5[is_paid]
+    R --> R1["id - PK"]
+    R --> R2["loan_id - FK"]
+    R --> R3["due_date"]
+    R --> R4["amount_due"]
+    R --> R5["is_paid"]
 
     %% Notification Fields
-    N --> N1[id - PK]
-    N --> N2[user_id - FK]
-    N --> N3[type: email/sms]
-    N --> N4[message]
-    N --> N5[sent_at]
+    N --> N1["id - PK"]
+    N --> N2["user_id - FK"]
+    N --> N3["type: email / sms"]
+    N --> N4["message"]
+    N --> N5["sent_at"]
+```
 
 ## Detail API Design
 

@@ -201,6 +201,7 @@ Content-Type: application/json
 ## Loan Status
 ## Endpoint `GET /api/loans/:user_id`
 ```
+```
 ## Request
 ## Method: GET
 ## Endpoint `GET /api/loans/{user_id}`

@@ -1,31 +1,29 @@
 ## High Level Design Architecture (Mobile Loan App - PT XYZ)
-+-------------------------+
-|     Mobile Frontend     |
-|  (Android / iOS App)    |
-+-----------+-------------+
-            |
-            v
-+-----------+-------------+
-|      API Gateway        |
-+-----------+-------------+
-            |
-            v
-+-----------+-------------+            +--------------------------+
-|        Backend API       |<--------->|  Third-party Integrations |
-| (Node.js / Spring / .NET)|           | (Email, SMS, KTP, Payment)|
-+-----------+-------------+            +--------------------------+
-   |         |         |         |         |
-   v         v         v         v         v
-+------+  +--------+ +--------+ +--------+ +------------------+
-| Auth |  |  Loan  | |  User  | | Notify | | Validation Engine |
-| Svc  |  | Mgmt   | | Profile| |  Svc   | | (Loan eligibility)|
-+------+  +--------+ +--------+ +--------+ +------------------+
-   |
-   v
-+------------------+
-|     Database     |
-|     (MySQL)      |
-+------------------+
+```mermaid
+flowchart TD
+    A[Mobile Frontend<br/>(Android / iOS App)]
+    B[API Gateway]
+    C[Backend API<br/>(Node.js / Spring / .NET)]
+    D[Third-party Integrations<br/>(Email, SMS, KTP, Payment)]
+    E1[Auth Svc]
+    E2[Loan Mgmt]
+    E3[User Profile]
+    E4[Notify Svc]
+    E5[Validation Engine<br/>(Loan Eligibility)]
+    F[Database<br/>(MySQL)]
+
+    A --> B
+    B --> C
+    C <--> D
+
+    C --> E1
+    C --> E2
+    C --> E3
+    C --> E4
+    C --> E5
+
+    E1 --> F
+```
 
 # Key Components
 - **Frontend (Mobile App)**:
@@ -111,6 +109,7 @@ Notifications
 - sent_at
 
 # Flowchart ERD Diagram
+```mermaid
 flowchart TD
     %% Entitas
     U[Users]
@@ -155,7 +154,7 @@ flowchart TD
     U -->|has| L
     L -->|has| R
     U -->|receives| N
-
+```
 ## Detail API Design
 
 ## User Registration

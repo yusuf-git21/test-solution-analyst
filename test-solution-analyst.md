@@ -1,4 +1,5 @@
-## High Level Design Architecture (Mobile Loan App - PT XYZ)
+# High Level Design Architecture Diagram (Mobile Loan App - PT XYZ)
+
 ```mermaid
 flowchart TD
     A[Mobile Frontend<br/>(Android / iOS App)]
@@ -24,7 +25,6 @@ flowchart TD
 
     E1 --> F
 ```
-
 # Key Components
 - **Frontend (Mobile App)**:
 Dibuat dengan Flutter/React Native.
@@ -108,16 +108,16 @@ Notifications
 - message
 - sent_at
 
-# Flowchart ERD Diagram
+# ERD Flowchart
+
 ```mermaid
 flowchart TD
-    %% Entitas
-    U[Users]
-    L[Loans]
-    R[Repayments]
-    N[Notifications]
+    %% Entities
+    U[Users] -->|user_id| L[Loans]
+    L -->|loan_id| R[Repayments]
+    U -->|user_id| N[Notifications]
 
-    %% Kolom Users
+    %% User Fields
     U --> U1[id (PK)]
     U --> U2[name]
     U --> U3[email]
@@ -127,33 +127,25 @@ flowchart TD
     U --> U7[selfie_photo]
     U --> U8[created_at]
 
-    %% Kolom Loans
+    %% Loan Fields
     L --> L1[id (PK)]
-    L --> L2[user_id (FK)]
-    L --> L3[amount]
-    L --> L4[tenor]
-    L --> L5[status (pending/accepted/rejected)]
-    L --> L6[created_at]
-    L --> L7[approved_at]
+    L --> L2[amount]
+    L --> L3[tenor]
+    L --> L4[status (pending/accepted/rejected)]
+    L --> L5[created_at]
+    L --> L6[approved_at]
 
-    %% Kolom Repayments
+    %% Repayment Fields
     R --> R1[id (PK)]
-    R --> R2[loan_id (FK)]
-    R --> R3[due_date]
-    R --> R4[amount_due]
-    R --> R5[is_paid]
+    R --> R2[due_date]
+    R --> R3[amount_due]
+    R --> R4[is_paid]
 
-    %% Kolom Notifications
+    %% Notification Fields
     N --> N1[id (PK)]
-    N --> N2[user_id (FK)]
-    N --> N3[type (email/sms)]
-    N --> N4[message]
-    N --> N5[sent_at]
-
-    %% Relasi antar entitas
-    U -->|has| L
-    L -->|has| R
-    U -->|receives| N
+    N --> N2[type (email/sms)]
+    N --> N3[message]
+    N --> N4[sent_at]
 ```
 ## Detail API Design
 

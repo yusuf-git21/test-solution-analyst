@@ -158,9 +158,10 @@ flowchart TD
 
 ## Detail API Design
 
-- **User Registration**
-POST /api/register
-Request:
+## User Registration
+## Eenpoint `POST /api/register`
+## Request 
+```json
 {
   "name": "Maulana",
   "email": "maulana@mail.com",
@@ -169,37 +170,42 @@ Request:
   "ktp_photo": "base64image",
   "selfie_photo": "base64image"
 }
-Response:
+```
+## Response
+```json
 { "status": "success", "user_id": "1" }
-
-- **Login API**
-POST /api/login
-
-- **Loan Request**
-POST /api/loans
-Request:
+```
+## Login API
+## Endpoint `POST /api/login`
+```
+## Loan Request
+## Endpoint `/api/loans`
+## Request
+```json
 {
   "user_id": 1,
   "amount": 8000000,
   "tenor": 12
 }
-
-Response
+```
+## Response
+```json
 { "status": "pending", "loan_id": 101 }
 
-- **Loan Status**
-GET /api/loans/:user_id
-Request:
-
-Method: GET
-Endpoint: /api/loans/{user_id}
-Headers:
-
+## Loan Status
+## Endpoint `GET /api/loans/:user_id`
+```
+## Request
+## Method: GET
+## Endpoint `GET /api/loans/{user_id}`
+```
+## Headers
+```http
 Authorization: Bearer <token>
 Content-Type: application/json
-
-Response - Success (Loan Found) :
-
+```
+## Response - Success (Loan Found) :
+```json
 {
   "status": "success",
   "data": {
@@ -228,34 +234,37 @@ Response - Success (Loan Found) :
     ]
   }
 }
-
- Response - No Active Loan :
-
+```
+## Response - No Active Loan
+```json
  {
   "status": "success",
   "data": null,
   "message": "Tidak ada pinjaman aktif untuk user ini."
 }
-
-Response - Error (User Not Found) :
+```
+## Response - Error (User Not Found)
+```json
 {
   "status": "error",
   "message": "User tidak ditemukan."
 }
+```
+## Notifikasi
+## Endpoint `POST /api/notifications/send`
 
-- **Notifikasi**
-POST /api/notifications/send
+## Request
+## Method: POST
+## Endpoint: `POST /api/notifications/send`
+`POST /api/notifications/send`
 
-Request
-Method: POST
-Endpoint: /api/notifications/send
-Headers:
-
+##Headers:
+```http
 Authorization: Bearer <token>
 Content-Type: application/json
-
-
-Body:
+```
+## Body
+```json
 {
   "user_id": 1,
   "type": "email", // or "sms"
@@ -267,8 +276,9 @@ Body:
     "status": "accepted"
   }
 }
-
- Response - Success:
+```
+ ## Response - Success
+```json
  {
   "status": "success",
   "message": "Notifikasi berhasil dikirim ke user.",
@@ -277,14 +287,14 @@ Body:
     "sent_at": "2025-04-05T14:15:00Z"
   }
 }
-
-Response - Error (User Not Found)
-
+```
+## Response - Error (User Not Found)
+```json
 {
   "status": "error",
   "message": "User dengan ID tersebut tidak ditemukan."
 }
-
+```
 ## Screen Behavior
 # Screen Behavior (UX/UI Notes)
 

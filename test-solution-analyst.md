@@ -24,7 +24,7 @@ flowchart TD
     C --> E5
 
     E1 --> F
-
+```
 # Key Components
 - **Frontend (Mobile App)**:
 Dibuat dengan Flutter/React Native.

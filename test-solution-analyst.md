@@ -172,6 +172,16 @@ flowchart TD
 ```
 ## Login API
 ## Endpoint `POST /api/login`
+## Request
+```http
+Content-Type: application/json
+```
+### Body
+```json
+{
+  "email": "user@example.com",
+  "password": "your_password"
+}
 ```
 ```
 ## Loan Request

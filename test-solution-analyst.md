@@ -1,4 +1,4 @@
-# System Architecture Diagram
+# High Level Design Architecture Diagram (Mobile Loan App - PT XYZ)
 
 ```mermaid
 flowchart TD
